@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Check Model Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <script src="{% static 'script.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Check Model Prediction</h1>
+        <div>
+            <label for="pressure-input">Pressure:</label>
+            <input type="number" id="pressure-input" name="pressure">
+        </div>
+        <div>
+            <label for="temperature-input">Temperature:</label>
+            <input type="number" id="temperature-input" name="temperature">
+        </div>
+        <div>
+            <label for="flow-rate-input">Flow Rate:</label>
+            <input type="number" id="flow-rate-input" name="flow_rate">
+        </div>
+        <button onclick="performPrediction()">Check Prediction</button>
+        <div id="prediction-result">Prediction: <span id="prediction">None</span></div>
+    </div>
+</body>
+</html>

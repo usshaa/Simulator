@@ -1,0 +1,21 @@
+
+<html>
+<head>
+    {% load static %}
+    <title>Oil Refinery Simulator</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <script src="{% static 'script.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Oil Refinery Simulator</h1>
+        <div id="pressure">Pressure: <span id="pressure-value">0</span> psi</div>
+        <div id="temperature">Temperature: <span id="temperature-value">0</span> &#8457;</div>
+        <div id="flow-rate">Flow Rate: <span id="flow-rate-value">0</span> gpm</div>
+        <button id="start-button" onclick="startSimulation()">Start Simulation</button>
+        <button id="stop-button" onclick="stopSimulation()" disabled>Stop Simulation</button>
+    </div>
+    <div id="prediction">Prediction: <span id="prediction-result">None</span></div>
+    <button id="predict-button" onclick="predictFailure()">Predict Equipment Failure</button>
+</body>
+</html>

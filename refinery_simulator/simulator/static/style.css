@@ -1,0 +1,62 @@
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#pressure, #temperature, #flow-rate {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+#prediction {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+#prediction-result {
+    font-weight: bold;
+}
+
+#predict-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#predict-button:hover {
+    background-color: #0056b3;
+}
+
+#predict-button:active {
+    background-color: #003080;
+}
