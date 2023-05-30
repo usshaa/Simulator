@@ -1,7 +1,6 @@
-
+{% load static %}
 <html>
 <head>
-    {% load static %}
     <title>Oil Refinery Simulator</title>
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <script src="{% static 'script.js' %}"></script>
@@ -15,7 +14,16 @@
         <button id="start-button" onclick="startSimulation()">Start Simulation</button>
         <button id="stop-button" onclick="stopSimulation()" disabled>Stop Simulation</button>
     </div>
-    <div id="prediction">Prediction: <span id="prediction-result">None</span></div>
-    <button id="predict-button" onclick="predictFailure()">Predict Equipment Failure</button>
+        <div>
+        Pressure: <input type="number" id="pressure-input">
+        </div>
+        <div>
+            Temperature: <input type="number" id="temperature-input">
+        </div>
+        <div>
+            Flow Rate: <input type="number" id="flow-rate-input">
+        </div>
+        <button onclick="manualController()">Update Values</button>
+
 </body>
 </html>
