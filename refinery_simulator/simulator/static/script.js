@@ -74,3 +74,6 @@ function manualController() {
     };
     xhr.send(JSON.stringify(data));
 }
+
+
+

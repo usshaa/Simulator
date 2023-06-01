@@ -7,23 +7,65 @@
 </head>
 <body>
     <div class="container">
-        <h1>Oil Refinery Simulator</h1>
-        <div id="pressure">Pressure: <span id="pressure-value">0</span> psi</div>
-        <div id="temperature">Temperature: <span id="temperature-value">0</span> &#8457;</div>
-        <div id="flow-rate">Flow Rate: <span id="flow-rate-value">0</span> gpm</div>
-        <button id="start-button" onclick="startSimulation()">Start Simulation</button>
-        <button id="stop-button" onclick="stopSimulation()" disabled>Stop Simulation</button>
+   <div class="panel">
+    <h1 class="panel-title">Oil Refinery Simulator</h1>
+    <div class="panel-content" id="sensor-values">
+      <div id="pressure">Pressure: <span id="pressure-value">0</span> psi</div>
+      <div id="temperature">Temperature: <span id="temperature-value">0</span> &#8457;</div>
+      <div id="flow-rate">Flow Rate: <span id="flow-rate-value">0</span> gpm</div>
     </div>
+     </div>
         <div>
-        Pressure: <input type="number" id="pressure-input">
-        </div>
-        <div>
-            Temperature: <input type="number" id="temperature-input">
-        </div>
-        <div>
-            Flow Rate: <input type="number" id="flow-rate-input">
-        </div>
-        <button onclick="manualController()">Update Values</button>
+        <button id="start-button" onclick="startSimulation()">Start Simulation</button>
+  <button id="stop-button" onclick="stopSimulation()" disabled>Stop Simulation</button>
+   </div>
+    <div id="slider-controls">
+       <div>
+                <label for="pressure-input">Pressure: &nbsp; (psi)</label>
+                <input type="range" min="0" max="100" value="50" id="pressure-input">
+                <span id="pressure-range">0 - 100 </span>
+            </div>
+            <div>
+                <label for="temperature-input">Temperature: &nbsp;(&#8457;)</label>
+                <input type="range" min="0" max="200" value="100" id="temperature-input">
+                <span id="temperature-range">0 - 200 </span>
+            </div>
+            <div>
+                <label for="flow-rate-input">Flow Rate: &nbsp; (gpm)</label>
+                <input type="range" min="0" max="1000" value="500" id="flow-rate-input">
+                <span id="flow-rate-range">0 - 1000</span>
+            </div>
+      <button onclick="manualController()">Update Values</button>
+    </div>
+    <div id="legends">
+         <h1>Sensor Data Normal Range</h1>
+      <div class="legend">
 
+        <span class="legend-title">Pressure Range:</span>
+        <span class="legend-value">20 - 70 psi</span>
+      </div>
+      <div class="legend">
+        <span class="legend-title">Temperature Range:</span>
+        <span class="legend-value">60 - 120 &#8457;</span>
+      </div>
+      <div class="legend">
+        <span class="legend-title">Flow Rate Range:</span>
+        <span class="legend-value">200 - 1000 gpm</span>
+      </div>
+    </div>
+<script>
+        // Add event listeners to the range inputs
+        document.getElementById('pressure-input').addEventListener('input', function () {
+            document.getElementById('pressure-range').innerText = this.value;
+        });
+
+        document.getElementById('temperature-input').addEventListener('input', function () {
+            document.getElementById('temperature-range').innerText = this.value;
+        });
+
+        document.getElementById('flow-rate-input').addEventListener('input', function () {
+            document.getElementById('flow-rate-range').innerText = this.value;
+        });
+    </script>
 </body>
 </html>

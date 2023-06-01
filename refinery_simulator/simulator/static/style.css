@@ -1,62 +1,117 @@
 .container {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-    background-color: #f2f2f2;
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.panel {
+  position: relative;
+  background-color: rgba(0, 0, 255, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+}
+
+.panel-title {
+  color: #000;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.panel-content {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #555;
 }
 
 button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
 button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#sensor-values {
+  margin-bottom: 20px;
 }
 
 #pressure, #temperature, #flow-rate {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #555;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #555;
 }
 
-#prediction {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #555;
+#slider-controls {
+  margin-bottom: 20px;
 }
 
-#prediction-result {
-    font-weight: bold;
+#slider-controls div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-#predict-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+#slider-controls label {
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
 }
 
-#predict-button:hover {
-    background-color: #0056b3;
+#slider-controls input[type="range"] {
+  width: calc(100% - 120px);
 }
 
-#predict-button:active {
-    background-color: #003080;
+#slider-controls span {
+  font-size: 16px;
+  color: #333;
+}
+
+#legends {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 20px;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.legend-title {
+  margin: 10px;
+  font-weight: bold;
+}
+
+.legend-value {
+  font-size: 16px;
+  color: #000;
 }
